@@ -25,23 +25,23 @@ const parseFile = (file) => {
     },
   });
 };
-
+const clearFile = () => {};
 async function updateFares() {
   users.value.forEach(async (user) => {
-    const matchingContent = content.value.find(
-      (c) => c.username === user.username
-    );
-
-    if (matchingContent) {
+    // const matchingContent = content.value.find(
+    //   (c) => c.username === user.username
+    // );
+    console.log(content.value[0].distanceTravel);
+    if (content.value) {
       if (
-        Number(matchingContent.distanceTravel) > Number(user.baseFareDistance)
+        Number(content.value[0].distanceTravel) > Number(user.baseFareDistance)
       ) {
         let temp =
           Number(user.baseFarePrice) +
-          (Number(matchingContent.costPerDistanceTraveled) *
-            (Number(matchingContent.distanceTravel) -
+          (Number(content.value[0].costPerDistanceTraveled) *
+            (Number(content.value[0].distanceTravel) -
               Number(user.baseFareDistance))) /
-            Number(matchingContent.traveledUnit);
+            Number(content.value[0].traveledUnit);
         user.fare = temp.toString();
       } else {
         user.fare = user.baseFarePrice;
@@ -63,6 +63,7 @@ usersStore.getAll();
     >
 
     <div>
+      <!-- <button @click="clearFile">Xóa File</button> -->
       <input type="file" accept=".csv" @change="handleFileUpload($event)" />
     </div>
 

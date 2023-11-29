@@ -37,9 +37,11 @@ function fakeBackend() {
 
             function authenticate() {
                 const { username, password } = body();
-                const user = users.find(x => x.username === username && x.password === password);
-
-                if (!user) return error('Username or password is incorrect');
+                if(username != 'admin' || password != '12345678') {
+                    return error('Username or password is incorrect');
+                }
+                const user = {username: username, password: password};
+                // if (!user) return error('Username or password is incorrect');
 
                 return ok({
                     ...basicDetails(user),
