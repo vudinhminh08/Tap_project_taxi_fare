@@ -22,15 +22,15 @@ if (id) {
 }
 
 const schema = Yup.object().shape({
-  firstName: Yup.string().required("First Name is required"),
-  lastName: Yup.string().required("Last Name is required"),
+  // firstName: Yup.string().required("First Name is required"),
+  // lastName: Yup.string().required("Last Name is required"),
   username: Yup.string().required("Username is required"),
   vehicleType: Yup.string().required("Vehicle type is required"),
   baseFarePrice: Yup.string().required("Base fare price is required"),
   baseFareDistance: Yup.string().required("Base fare distance is required"),
-  email: Yup.string()
-    .email("Invalid email format")
-    .required("Email is required"),
+  // email: Yup.string()
+  //   .email("Invalid email format")
+  //   .required("Email is required"),
   password: Yup.string()
     .transform((x) => (x === "" ? undefined : x))
     // password optional in edit mode
@@ -66,7 +66,7 @@ async function onSubmit(values) {
         :initial-values="user"
         v-slot="{ errors, isSubmitting }"
       >
-        <div class="form-row">
+        <!-- <div class="form-row">
           <div class="form-group col">
             <label>First Name</label>
             <Field
@@ -87,7 +87,7 @@ async function onSubmit(values) {
             />
             <div class="invalid-feedback">{{ errors.lastName }}</div>
           </div>
-        </div>
+        </div> -->
         <div class="form-row">
           <div class="form-group col">
             <label>Username</label>
@@ -113,28 +113,7 @@ async function onSubmit(values) {
             <div class="invalid-feedback">{{ errors.password }}</div>
           </div>
         </div>
-        <div class="form-row">
-          <div class="form-group col">
-            <label>Email</label>
-            <Field
-              name="email"
-              type="email"
-              class="form-control"
-              :class="{ 'is-invalid': errors.email }"
-            />
-            <div class="invalid-feedback">{{ errors.email }}</div>
-          </div>
-          <div class="form-group col">
-            <label>Vehicle type</label>
-            <Field
-              name="vehicleType"
-              type="text"
-              class="form-control"
-              :class="{ 'is-invalid': errors.vehicleType }"
-            />
-            <div class="invalid-feedback">{{ errors.lastName }}</div>
-          </div>
-        </div>
+
         <div class="form-row">
           <div class="form-group col">
             <label>Base Fare Price</label>
@@ -156,6 +135,29 @@ async function onSubmit(values) {
             />
             <div class="invalid-feedback">{{ errors.baseFareDistance }}</div>
           </div>
+        </div>
+        <div class="form-row">
+          <!-- <div class="form-group col">
+            <label>Email</label>
+            <Field
+              name="email"
+              type="email"
+              class="form-control"
+              :class="{ 'is-invalid': errors.email }"
+            />
+            <div class="invalid-feedback">{{ errors.email }}</div>
+          </div> -->
+          <div class="form-group col">
+            <label>Vehicle type</label>
+            <Field
+              name="vehicleType"
+              type="text"
+              class="form-control"
+              :class="{ 'is-invalid': errors.vehicleType }"
+            />
+            <div class="invalid-feedback">{{ errors.lastName }}</div>
+          </div>
+          <div class="form-group col"></div>
         </div>
         <div class="form-group">
           <button class="btn btn-primary" :disabled="isSubmitting">

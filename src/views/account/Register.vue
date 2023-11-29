@@ -7,7 +7,7 @@
         :validation-schema="schema"
         v-slot="{ errors, isSubmitting }"
       >
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label>First Name</label>
           <Field
             name="firstName"
@@ -16,8 +16,8 @@
             :class="{ 'is-invalid': errors.firstName }"
           />
           <div class="invalid-feedback">{{ errors.firstName }}</div>
-        </div>
-        <div class="form-group">
+        </div> -->
+        <!-- <div class="form-group">
           <label>Last Name</label>
           <Field
             name="lastName"
@@ -26,8 +26,8 @@
             :class="{ 'is-invalid': errors.lastName }"
           />
           <div class="invalid-feedback">{{ errors.lastName }}</div>
-        </div>
-        <div class="form-group">
+        </div> -->
+        <!-- <div class="form-group">
           <label>Email</label>
           <Field
             name="email"
@@ -36,7 +36,7 @@
             :class="{ 'is-invalid': errors.email }"
           />
           <div class="invalid-feedback">{{ errors.email }}</div>
-        </div>
+        </div> -->
         <div class="form-group">
           <label>Vehicle type</label>
           <Field
@@ -110,15 +110,15 @@ import { useUsersStore, useAlertStore } from "@/stores";
 import { router } from "@/router";
 
 const schema = Yup.object().shape({
-  firstName: Yup.string().required("First Name is required"),
-  lastName: Yup.string().required("Last Name is required"),
+  // firstName: Yup.string().required("First Name is required"),
+  // lastName: Yup.string().required("Last Name is required"),
   username: Yup.string().required("Username is required"),
   vehicleType: Yup.string().required("Vehicle type is required"),
   baseFarePrice: Yup.string().required("Base fare price is required"),
   baseFareDistance: Yup.string().required("Base fare distance is required"),
-  email: Yup.string()
-    .email("Invalid email format")
-    .required("Email is required"),
+  // email: Yup.string()
+  //   .email("Invalid email format")
+  //   .required("Email is required"),
   password: Yup.string()
     .required("Password is required")
     .min(6, "Password must be at least 6 characters"),

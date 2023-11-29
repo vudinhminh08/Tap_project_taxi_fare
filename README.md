@@ -6,6 +6,13 @@ Install
 npm install
 Run:
 npm run dev
+
+```
+
 Admin account:
-admin/12345678
+
+```
+username: admin
+password:12345678
+
 ```

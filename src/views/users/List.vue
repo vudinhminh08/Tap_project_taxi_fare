@@ -62,7 +62,7 @@ usersStore.getAll();
       >Add User</router-link
     >
 
-    <div>
+    <div class="btn btn-sm mb-2">
       <!-- <button @click="clearFile">Xóa File</button> -->
       <input type="file" accept=".csv" @change="handleFileUpload($event)" />
     </div>
@@ -70,12 +70,12 @@ usersStore.getAll();
     <table class="table table-striped">
       <thead>
         <tr>
-          <th style="width: 15%">First Name</th>
-          <th style="width: 15%">Last Name</th>
-          <th style="width: 15%">Username</th>
-          <td style="width: 15%">Email</td>
-          <td style="width: 15%">Vehicle Type</td>
-          <td style="width: 15%">Base Fare Distance</td>
+          <!-- <th style="width: 15%">First Name</th>
+          <th style="width: 15%">Last Name</th> -->
+          <th style="width: 20%">Username</th>
+          <!-- <td style="width: 15%">Email</td> -->
+          <td style="width: 20%">Vehicle Type</td>
+          <td style="width: 20%">Base Fare Distance</td>
           <td style="width: 15%">Base Fare Price</td>
           <td style="width: 15%">Fare</td>
           <th style="width: 5%"></th>
@@ -84,10 +84,10 @@ usersStore.getAll();
       <tbody>
         <template v-if="users.length">
           <tr v-for="user in users" :key="user.id">
-            <td>{{ user.firstName }}</td>
-            <td>{{ user.lastName }}</td>
+            <!-- <td>{{ user.firstName }}</td>
+            <td>{{ user.lastName }}</td> -->
             <td>{{ user.username }}</td>
-            <td>{{ user.email }}</td>
+            <!-- <td>{{ user.email }}</td> -->
             <td>{{ user.vehicleType }}</td>
             <td>{{ user.baseFareDistance }}</td>
             <td>{{ user.baseFarePrice }}</td>
@@ -100,7 +100,7 @@ usersStore.getAll();
               >
               <button
                 @click="usersStore.delete(user.id)"
-                class="btn btn-sm btn-danger btn-delete-user"
+                class="btn btn-sm btn-danger"
                 :disabled="user.isDeleting"
               >
                 <span

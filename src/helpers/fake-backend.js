@@ -120,8 +120,8 @@ function fakeBackend() {
             }
 
             function basicDetails(user) {
-                const { id, username, firstName, lastName, email,  vehicleType, baseFarePrice, baseFareDistance, fare} = user;
-                return { id, username, firstName, lastName, email,  vehicleType, baseFarePrice, baseFareDistance, fare };
+                const { id, username,  vehicleType, baseFarePrice, baseFareDistance, fare} = user;
+                return { id, username,  vehicleType, baseFarePrice, baseFareDistance, fare };
             }
 
             function isAuthenticated() {
