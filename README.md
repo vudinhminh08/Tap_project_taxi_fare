@@ -14,5 +14,8 @@ Admin account:
 ```
 username: admin
 password:12345678
-
+```
+Sample csv file:
+```
+path: src\sample_csv
 ```
